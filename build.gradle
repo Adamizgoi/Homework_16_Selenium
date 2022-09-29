@@ -13,11 +13,13 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.9.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.9.0'
     testImplementation group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.9.0'
-    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.4.0'
+    implementation group: 'com.codeborne', name: 'selenide', version: '6.8.1'
     implementation group: 'com.puppycrawl.tools', name: 'checkstyle', version: '10.3.3'
     compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.24'
 }
 
 test {
     useJUnitPlatform()
+    // в тестах, вызывая `gradlew test -Dselenide.headless=true` будем передавать этот параметр в JVM (где его подтянет Selenide)
+    systemProperty 'selenide.headless', System.getProperty('selenide.headless')
 }
