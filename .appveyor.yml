@@ -10,6 +10,4 @@ build: off
 
 build_script:
   - chmod +x gradlew
-  - cd artifacts
-  - java -jar app-order.jar
   - ./gradlew test --info
