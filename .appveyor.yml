@@ -10,4 +10,4 @@ build: off
 
 build_script:
   - chmod +x gradlew
-  - ./gradlew test -Dselenide.headless=true --info
+  - ./gradlew test --info
